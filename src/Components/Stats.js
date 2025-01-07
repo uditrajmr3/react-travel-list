@@ -7,6 +7,14 @@ export default function Stats({ itemCount, packedCount }) {
     return getPercentage() === 100;
   }
 
+  if (itemCount === 0) {
+    return (
+      <footer className="stats">
+        <em>Start by Adding Items to the List 🫡</em>
+      </footer>
+    );
+  }
+
   return (
     <footer className="stats">
       <em>

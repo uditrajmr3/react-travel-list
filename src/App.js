@@ -21,6 +21,10 @@ function App() {
     setlist((list) => list.filter((i) => i.id !== id));
   }
 
+  function clearList() {
+    setlist([]);
+  }
+
   function toggleItem(id) {
     setlist((list) =>
       list.map((i) => (i.id === id ? { ...i, packed: !i.packed } : i))
@@ -45,6 +49,7 @@ function App() {
         list={list}
         onDeleteItem={deleteItem}
         onToggleItem={toggleItem}
+        onClearList={clearList}
       />
       <Stats itemCount={getItemCount()} packedCount={getPackedCount()} />
     </div>
