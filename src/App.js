@@ -22,7 +22,16 @@ function App() {
   }
 
   function clearList() {
-    setlist([]);
+    if (list.length === 0) {
+      alert("There are no items in the list to be cleared");
+      return;
+    }
+
+    const confirm = window.confirm(
+      "Doing this will remove all the items for the list. are you sure you want to do that?"
+    );
+
+    if (confirm) setlist([]);
   }
 
   function toggleItem(id) {
