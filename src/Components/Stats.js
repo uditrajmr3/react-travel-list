@@ -1,8 +1,9 @@
-export default function Stats() {
+export default function Stats({ itemCount, packedCount }) {
   return (
     <footer className="stats">
       <em>
-        🧳 You have X items on your list, and you have already packed X (X%)
+        🧳 You have {itemCount} items on your list, and you have already packed{" "}
+        {packedCount} ({(packedCount / itemCount) * 100}%)
       </em>
     </footer>
   );

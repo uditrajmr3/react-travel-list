@@ -26,7 +26,7 @@ function Item({ item, onDeleteItem, onToggleItem }) {
 
   return (
     <li>
-      <input type="checkbox" checked={item.packed} onInput={handleToggle} />
+      <input type="checkbox" checked={item.packed} onChange={handleToggle} />
       <span style={{ textDecoration: item.packed ? "line-through" : "none" }}>
         {item.quantity} {item.description}
       </span>

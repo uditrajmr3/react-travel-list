@@ -27,6 +27,16 @@ function App() {
     );
   }
 
+  function getItemCount() {
+    return list.reduce((sum, item) => sum + item.quantity, 0);
+  }
+
+  function getPackedCount() {
+    return list
+      .filter((i) => i.packed)
+      .reduce((sum, item) => sum + item.quantity, 0);
+  }
+
   return (
     <div className="App">
       <Logo />
@@ -36,7 +46,7 @@ function App() {
         onDeleteItem={deleteItem}
         onToggleItem={toggleItem}
       />
-      <Stats />
+      <Stats itemCount={getItemCount()} packedCount={getPackedCount()} />
     </div>
   );
 }
