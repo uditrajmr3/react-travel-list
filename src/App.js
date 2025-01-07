@@ -21,11 +21,21 @@ function App() {
     setlist((list) => list.filter((i) => i.id !== id));
   }
 
+  function toggleItem(id) {
+    setlist((list) =>
+      list.map((i) => (i.id === id ? { ...i, packed: !i.packed } : i))
+    );
+  }
+
   return (
     <div className="App">
       <Logo />
       <Form onAddItem={addItem} />
-      <PackingList list={list} onDeleteItem={deleteItem} />
+      <PackingList
+        list={list}
+        onDeleteItem={deleteItem}
+        onToggleItem={toggleItem}
+      />
       <Stats />
     </div>
   );
