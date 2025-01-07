@@ -134,3 +134,40 @@ input[type="checkbox"] {
   font-weight: 700;
   padding: 3.2rem 0;
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+    word-spacing: 15px;
+    letter-spacing: -2px;
+  }
+
+  .add-form {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .add-form h3 {
+    margin: 0 0 1rem 0;
+  }
+
+  .list {
+    padding: 2rem 0;
+  }
+
+  .list ul {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    font-size: 1.8rem;
+  }
+
+  button,
+  select,
+  input {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+  }
+}
